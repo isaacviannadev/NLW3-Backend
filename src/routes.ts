@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import multer from 'multer';
 
 import uploadConfig from './config/upload';
@@ -10,5 +10,6 @@ const upload = multer(uploadConfig);
 routes.get('/orphanages', OrphanagesControler.index);
 routes.get('/orphanages/:id', OrphanagesControler.show);
 routes.post('/orphanages', upload.array('images'), OrphanagesControler.create);
+routes.delete('/orphanages/:id', OrphanagesControler.delete);
 
- export default routes;
+export default routes;

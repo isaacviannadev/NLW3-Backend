@@ -17,4 +17,9 @@ app.use(routes);
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')))
 app.use(errorHandler);
 
+app.delete('/orphanages/:id', (request, response) => {
+    return response.send("Deletado");
+    }
+)
+
 app.listen(3333);
